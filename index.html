@@ -113,7 +113,7 @@
           <a href="#"><i class="fas fa-external-link-alt"></i></a>
           <a href="https://github.com/RosanneVaz/whispers-of-the-wick" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <h3>Whispers <br> of the Wick</h3>
+        <h3>Whispers of the Wick</h3>
         <p>An immersive 2D browser game with physics-based interactions and progressive difficulty scaling.</p>
       </div>
       <div class="project-tech">
@@ -362,19 +362,20 @@
           </div>
         </div>
       </div>
-      <form class="contact-form">
-        <div class="form-group">
-          <input type="text" placeholder="Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Email" required>
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn">Send Message</button>
+      <form class="contact-form" name="contact" method="POST" netlify netlify-honeypot="bot-field" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
       </form>
-    </div>
+      </div>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/rosanne-danora-vaz-679530279/" class="social-icon" aria-label="LinkedIn">
         <i class="fab fa-linkedin-in"></i>

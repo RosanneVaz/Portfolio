@@ -147,13 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Form submission
   const contactForm = document.querySelector(".contact-form");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      // Here you would typically send the form data to a server
+if (contactForm) {
+  contactForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    });
+    
+    if (response.ok) {
       alert("Thank you for your message! I'll get back to you soon.");
       this.reset();
-    });
-  }
+    } else {
+      alert("There was an error submitting your message. Please try again.");
+    }
+  });
+}
 });
